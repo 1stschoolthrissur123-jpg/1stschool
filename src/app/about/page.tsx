@@ -44,7 +44,7 @@ export default function AboutPage() {
             .catch(() => { });
     }, []);
 
-    const aboutImg = gallery.find(g => g.slot === 'about');
+    const aboutImg = Array.isArray(gallery) ? gallery.find(g => g.slot === 'about') : undefined;
 
     return (
         <div style={{ background: 'var(--bg)', color: 'var(--text)', fontFamily: 'var(--font-body)' }}>

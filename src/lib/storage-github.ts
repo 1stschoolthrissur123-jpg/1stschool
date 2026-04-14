@@ -49,7 +49,13 @@ async function getSHA(filePath: string): Promise<string | null> {
     return data.sha ?? null;
 }
 
-async function readManifest(): Promise<GalleryItem[]> {
+function getArray(data: any): GalleryItem[] {
+    if (Array.isArray(data)) return data;
+    if (data && typeof data === 'object' && Array.isArray(data.gallery)) return data.gallery;
+    return [];
+}
+
+async function readManifestRaw(): Promise<any> {
     const res = await ghFetch(MANIFEST, undefined, true);
     if (!res.ok) return [];
     const data = await res.json();
@@ -59,8 +65,8 @@ async function readManifest(): Promise<GalleryItem[]> {
     } catch { return []; }
 }
 
-async function writeManifest(items: GalleryItem[]) {
-    const content = Buffer.from(JSON.stringify(items, null, 2)).toString('base64');
+async function writeManifestRaw(data: any) {
+    const content = Buffer.from(JSON.stringify(data, null, 2)).toString('base64');
     const sha = await getSHA(MANIFEST);
     const body: Record<string, unknown> = {
         message: `chore: update gallery manifest [${new Date().toISOString()}]`,
@@ -79,12 +85,13 @@ export async function getGallery(): Promise<GalleryItem[]> {
     if (!TOKEN || !OWNER || !REPO) {
         throw new Error('Missing GitHub env vars: GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO');
     }
-    return readManifest();
+    const data = await readManifestRaw();
+    return getArray(data);
 }
 
 export async function uploadImage(slot: string, buffer: Buffer, ext: string, alt: string): Promise<GalleryItem> {
     if (!TOKEN || !OWNER || !REPO) {
-        throw new Error('Missing GitHub env vars. Set GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO in Vercel.');
+        throw new Error('Missing GitHub env vars. Set GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO in Netlify.');
     }
     const safeExt = ext.replace(/[^a-z0-9]/gi, '').toLowerCase() || 'jpg';
     const filename = `${slot}.${safeExt}`;
@@ -104,14 +111,23 @@ export async function uploadImage(slot: string, buffer: Buffer, ext: string, alt
     }
     const url = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${BASE}/${filename}?t=${Date.now()}`;
     const item: GalleryItem = { id: `${slot}-${Date.now()}`, url, slot, alt, filename, addedAt: new Date().toISOString() };
-    const manifest = await readManifest();
-    await writeManifest([...manifest.filter(m => m.slot !== slot), item]);
+
+    const data = await readManifestRaw();
+    const items = getArray(data);
+    const updatedItems = [...items.filter(m => m.slot !== slot), item];
+
+    if (Array.isArray(data)) {
+        await writeManifestRaw(updatedItems);
+    } else {
+        await writeManifestRaw({ ...data, gallery: updatedItems });
+    }
     return item;
 }
 
 export async function deleteImage(slot: string): Promise<void> {
-    const manifest = await readManifest();
-    const item = manifest.find(m => m.slot === slot);
+    const data = await readManifestRaw();
+    const items = getArray(data);
+    const item = items.find(m => m.slot === slot);
     if (item) {
         const filePath = `${BASE}/${item.filename}`;
         const sha = await getSHA(filePath);
@@ -126,5 +142,10 @@ export async function deleteImage(slot: string): Promise<void> {
             }
         }
     }
-    await writeManifest(manifest.filter(m => m.slot !== slot));
+    const updatedItems = items.filter(m => m.slot !== slot);
+    if (Array.isArray(data)) {
+        await writeManifestRaw(updatedItems);
+    } else {
+        await writeManifestRaw({ ...data, gallery: updatedItems });
+    }
 }

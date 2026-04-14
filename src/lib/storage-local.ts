@@ -17,19 +17,25 @@ function ensureDir() {
     if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR, { recursive: true });
 }
 
-function readManifest(): GalleryItem[] {
+function readManifestRaw(): any {
     ensureDir();
     if (!fs.existsSync(MANIFEST)) return [];
     try { return JSON.parse(fs.readFileSync(MANIFEST, 'utf-8')); } catch { return []; }
 }
 
-function writeManifest(items: GalleryItem[]) {
+function writeManifestRaw(data: any) {
     ensureDir();
-    fs.writeFileSync(MANIFEST, JSON.stringify(items, null, 2));
+    fs.writeFileSync(MANIFEST, JSON.stringify(data, null, 2));
+}
+
+function getArray(data: any): GalleryItem[] {
+    if (Array.isArray(data)) return data;
+    if (data && typeof data === 'object' && Array.isArray(data.gallery)) return data.gallery;
+    return [];
 }
 
 export async function getGallery(): Promise<GalleryItem[]> {
-    return readManifest();
+    return getArray(readManifestRaw());
 }
 
 export async function uploadImage(slot: string, buffer: Buffer, ext: string, alt: string): Promise<GalleryItem> {
@@ -40,17 +46,31 @@ export async function uploadImage(slot: string, buffer: Buffer, ext: string, alt
     fs.writeFileSync(filePath, buffer);
     const url = `/uploads/${filename}?t=${Date.now()}`;
     const item: GalleryItem = { id: `${slot}-${Date.now()}`, url, slot, alt, filename, addedAt: new Date().toISOString() };
-    const manifest = readManifest();
-    writeManifest([...manifest.filter(m => m.slot !== slot), item]);
+
+    const data = readManifestRaw();
+    const items = getArray(data);
+    const updatedItems = [...items.filter(m => m.slot !== slot), item];
+
+    if (Array.isArray(data)) {
+        writeManifestRaw(updatedItems);
+    } else {
+        writeManifestRaw({ ...data, gallery: updatedItems });
+    }
     return item;
 }
 
 export async function deleteImage(slot: string): Promise<void> {
-    const manifest = readManifest();
-    const item = manifest.find(m => m.slot === slot);
+    const data = readManifestRaw();
+    const items = getArray(data);
+    const item = items.find(m => m.slot === slot);
     if (item) {
         const filePath = path.join(UPLOADS_DIR, item.filename);
         if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
     }
-    writeManifest(manifest.filter(m => m.slot !== slot));
+    const updatedItems = items.filter(m => m.slot !== slot);
+    if (Array.isArray(data)) {
+        writeManifestRaw(updatedItems);
+    } else {
+        writeManifestRaw({ ...data, gallery: updatedItems });
+    }
 }

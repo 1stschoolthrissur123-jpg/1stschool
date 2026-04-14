@@ -23,7 +23,8 @@ export default function GalleryPage() {
         fetch('/api/gallery', { cache: 'no-store' })
             .then(r => r.ok ? r.json() : [])
             .then((items: GalleryItem[]) => {
-                setGallery(items.filter(g => g.slot.startsWith('gallery')));
+                const list = Array.isArray(items) ? items : [];
+                setGallery(list.filter(g => g.slot.startsWith('gallery')));
                 setLoading(false);
             })
             .catch(() => setLoading(false));

@@ -31,7 +31,10 @@ export default function AdminPage() {
     const fetchGallery = () => {
         fetch('/api/gallery', { cache: 'no-store' })
             .then(r => r.ok ? r.json() : [])
-            .then((items: GalleryItem[]) => { setGallery(items); setLoading(false); })
+            .then((items: GalleryItem[]) => {
+                setGallery(Array.isArray(items) ? items : []);
+                setLoading(false);
+            })
             .catch(() => setLoading(false));
     };
 
@@ -137,7 +140,7 @@ export default function AdminPage() {
                 ) : (
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))', gap: '1rem' }}>
                         {SLOTS.map(s => {
-                            const existing = gallery.find(g => g.slot === s.slot);
+                            const existing = Array.isArray(gallery) ? gallery.find(g => g.slot === s.slot) : undefined;
                             const isUploading = uploading === s.slot;
                             const isDeleting = deleting === s.slot;
                             return (

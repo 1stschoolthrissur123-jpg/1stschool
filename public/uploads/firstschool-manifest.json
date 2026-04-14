@@ -1,82 +1,90 @@
-[
-  {
-    "id": "hero-1776103635461",
-    "url": "/uploads/hero.jpg?t=1776103635461",
-    "slot": "hero",
-    "alt": "1st School — hero",
-    "filename": "hero.jpg",
-    "addedAt": "2026-04-13T18:07:15.461Z"
-  },
-  {
-    "id": "about-1776104282267",
-    "url": "/uploads/about.avif?t=1776104282266",
-    "slot": "about",
-    "alt": "1st School — about",
-    "filename": "about.avif",
-    "addedAt": "2026-04-13T18:18:02.267Z"
-  },
-  {
-    "id": "gallery-1-1776104291574",
-    "url": "/uploads/gallery-1.jpg?t=1776104291574",
-    "slot": "gallery-1",
-    "alt": "1st School — gallery-1",
-    "filename": "gallery-1.jpg",
-    "addedAt": "2026-04-13T18:18:11.574Z"
-  },
-  {
-    "id": "gallery-2-1776104297348",
-    "url": "/uploads/gallery-2.jpg?t=1776104297348",
-    "slot": "gallery-2",
-    "alt": "1st School — gallery-2",
-    "filename": "gallery-2.jpg",
-    "addedAt": "2026-04-13T18:18:17.348Z"
-  },
-  {
-    "id": "gallery-3-1776104306018",
-    "url": "/uploads/gallery-3.jpg?t=1776104306018",
-    "slot": "gallery-3",
-    "alt": "1st School — gallery-3",
-    "filename": "gallery-3.jpg",
-    "addedAt": "2026-04-13T18:18:26.019Z"
-  },
-  {
-    "id": "gallery-4-1776104315482",
-    "url": "/uploads/gallery-4.jpg?t=1776104315482",
-    "slot": "gallery-4",
-    "alt": "1st School — gallery-4",
-    "filename": "gallery-4.jpg",
-    "addedAt": "2026-04-13T18:18:35.482Z"
-  },
-  {
-    "id": "gallery-5-1776104325303",
-    "url": "/uploads/gallery-5.jpg?t=1776104325303",
-    "slot": "gallery-5",
-    "alt": "1st School — gallery-5",
-    "filename": "gallery-5.jpg",
-    "addedAt": "2026-04-13T18:18:45.303Z"
-  },
-  {
-    "id": "gallery-6-1776104337620",
-    "url": "/uploads/gallery-6.jpg?t=1776104337620",
-    "slot": "gallery-6",
-    "alt": "1st School — gallery-6",
-    "filename": "gallery-6.jpg",
-    "addedAt": "2026-04-13T18:18:57.620Z"
-  },
-  {
-    "id": "gallery-7-1776104345465",
-    "url": "/uploads/gallery-7.jpg?t=1776104345465",
-    "slot": "gallery-7",
-    "alt": "1st School — gallery-7",
-    "filename": "gallery-7.jpg",
-    "addedAt": "2026-04-13T18:19:05.465Z"
-  },
-  {
-    "id": "gallery-8-1776104357513",
-    "url": "/uploads/gallery-8.jpg?t=1776104357513",
-    "slot": "gallery-8",
-    "alt": "1st School — gallery-8",
-    "filename": "gallery-8.jpg",
-    "addedAt": "2026-04-13T18:19:17.513Z"
+{
+  "gallery": [
+    {
+      "id": "hero-1776103635461",
+      "url": "/uploads/hero.jpg?t=1776103635461",
+      "slot": "hero",
+      "alt": "1st School — hero",
+      "filename": "hero.jpg",
+      "addedAt": "2026-04-13T18:07:15.461Z"
+    },
+    {
+      "id": "about-1776104282267",
+      "url": "/uploads/about.avif?t=1776104282266",
+      "slot": "about",
+      "alt": "1st School — about",
+      "filename": "about.avif",
+      "addedAt": "2026-04-13T18:18:02.267Z"
+    },
+    {
+      "id": "gallery-1-1776104291574",
+      "url": "/uploads/gallery-1.jpg?t=1776104291574",
+      "slot": "gallery-1",
+      "alt": "1st School — gallery-1",
+      "filename": "gallery-1.jpg",
+      "addedAt": "2026-04-13T18:18:11.574Z"
+    },
+    {
+      "id": "gallery-2-1776104297348",
+      "url": "/uploads/gallery-2.jpg?t=1776104297348",
+      "slot": "gallery-2",
+      "alt": "1st School — gallery-2",
+      "filename": "gallery-2.jpg",
+      "addedAt": "2026-04-13T18:18:17.348Z"
+    },
+    {
+      "id": "gallery-3-1776104306018",
+      "url": "/uploads/gallery-3.jpg?t=1776104306018",
+      "slot": "gallery-3",
+      "alt": "1st School — gallery-3",
+      "filename": "gallery-3.jpg",
+      "addedAt": "2026-04-13T18:18:26.019Z"
+    },
+    {
+      "id": "gallery-4-1776104315482",
+      "url": "/uploads/gallery-4.jpg?t=1776104315482",
+      "slot": "gallery-4",
+      "alt": "1st School — gallery-4",
+      "filename": "gallery-4.jpg",
+      "addedAt": "2026-04-13T18:18:35.482Z"
+    },
+    {
+      "id": "gallery-5-1776104325303",
+      "url": "/uploads/gallery-5.jpg?t=1776104325303",
+      "slot": "gallery-5",
+      "alt": "1st School — gallery-5",
+      "filename": "gallery-5.jpg",
+      "addedAt": "2026-04-13T18:18:45.303Z"
+    },
+    {
+      "id": "gallery-6-1776104337620",
+      "url": "/uploads/gallery-6.jpg?t=1776104337620",
+      "slot": "gallery-6",
+      "alt": "1st School — gallery-6",
+      "filename": "gallery-6.jpg",
+      "addedAt": "2026-04-13T18:18:57.620Z"
+    },
+    {
+      "id": "gallery-7-1776104345465",
+      "url": "/uploads/gallery-7.jpg?t=1776104345465",
+      "slot": "gallery-7",
+      "alt": "1st School — gallery-7",
+      "filename": "gallery-7.jpg",
+      "addedAt": "2026-04-13T18:19:05.465Z"
+    },
+    {
+      "id": "gallery-8-1776104357513",
+      "url": "/uploads/gallery-8.jpg?t=1776104357513",
+      "slot": "gallery-8",
+      "alt": "1st School — gallery-8",
+      "filename": "gallery-8.jpg",
+      "addedAt": "2026-04-13T18:19:17.513Z"
+    }
+  ],
+  "sections": {
+    "hero_bg": "/uploads/section-hero_bg.jpg?t=1776161738729",
+    "about_img": "/uploads/section-about_img.avif?t=1776161783306",
+    "programs_bg": "/uploads/section-programs_bg.jpg?t=1776161794923",
+    "contact_bg": "/uploads/section-contact_bg.jpg?t=1776161801803"
   }
-]
+}
