@@ -7,7 +7,7 @@ import {
 import Link from 'next/link';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import HeroBackground from './components/HeroBackground';
+import PageBackground from './components/PageBackground';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -48,7 +48,7 @@ export default function HomePage() {
       {/* ═══ HERO ═══════════════════════════════════════ */}
       <section style={{ minHeight: '100dvh', display: 'flex', alignItems: 'center', paddingTop: '72px', position: 'relative', overflow: 'hidden' }}>
         {/* 3D Parallax Hero Background (from Admin > Hero Banner slot) */}
-        <HeroBackground />
+        <PageBackground slot="hero" />
 
         {/* CSS blob fallback — shows when no hero image is uploaded */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
