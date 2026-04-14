@@ -7,6 +7,7 @@ import {
 import Link from 'next/link';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import HeroBackground from './components/HeroBackground';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -46,7 +47,10 @@ export default function HomePage() {
 
       {/* ═══ HERO ═══════════════════════════════════════ */}
       <section style={{ minHeight: '100dvh', display: 'flex', alignItems: 'center', paddingTop: '72px', position: 'relative', overflow: 'hidden' }}>
-        {/* Animated background blobs */}
+        {/* 3D Parallax Hero Background (from Admin > Hero Banner slot) */}
+        <HeroBackground />
+
+        {/* CSS blob fallback — shows when no hero image is uploaded */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
           <div style={{ position: 'absolute', top: '-15%', right: '-10%', width: 'clamp(300px,50vw,600px)', height: 'clamp(300px,50vw,600px)', background: 'radial-gradient(circle, rgba(229,57,53,0.12) 0%, transparent 65%)', borderRadius: '60% 40% 30% 70%', animation: 'blob 8s ease-in-out infinite' }} />
           <div style={{ position: 'absolute', bottom: '5%', left: '-8%', width: 'clamp(250px,40vw,500px)', height: 'clamp(250px,40vw,500px)', background: 'radial-gradient(circle, rgba(30,136,229,0.1) 0%, transparent 65%)', borderRadius: '30% 60% 70% 40%', animation: 'blob 10s ease-in-out infinite reverse' }} />

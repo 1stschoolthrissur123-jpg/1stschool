@@ -1,14 +1,6 @@
 {
   "gallery": [
     {
-      "id": "hero-1776103635461",
-      "url": "/uploads/hero.jpg?t=1776103635461",
-      "slot": "hero",
-      "alt": "1st School — hero",
-      "filename": "hero.jpg",
-      "addedAt": "2026-04-13T18:07:15.461Z"
-    },
-    {
       "id": "about-1776104282267",
       "url": "/uploads/about.avif?t=1776104282266",
       "slot": "about",
@@ -79,6 +71,14 @@
       "alt": "1st School — gallery-8",
       "filename": "gallery-8.jpg",
       "addedAt": "2026-04-13T18:19:17.513Z"
+    },
+    {
+      "id": "hero-1776164395508",
+      "url": "/uploads/hero.jpg?t=1776164395508",
+      "slot": "hero",
+      "alt": "1st School — hero",
+      "filename": "hero.jpg",
+      "addedAt": "2026-04-14T10:59:55.508Z"
     }
   ],
   "sections": {
