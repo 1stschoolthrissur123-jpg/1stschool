@@ -56,11 +56,11 @@ export default function AboutPage() {
                 <PageBackground slot="about-bg" />
                 <div className="container" style={{ position: 'relative', textAlign: 'center', zIndex: 1 }}>
                     <motion.div initial="hidden" animate="show" variants={stagger} className="hero-text-shadow hero-text-white">
-                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>About Us</motion.p>
-                        <motion.h1 variants={fadeUp} style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-3xl)', marginBottom: '1rem', lineHeight: 1.1 }}>
+                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem', color: 'white' }}>About Us</motion.p>
+                        <motion.h1 variants={fadeUp} style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-3xl)', marginBottom: '1rem', lineHeight: 1.1, color: 'white' }}>
                             Our Story & Mission
                         </motion.h1>
-                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', maxWidth: '55ch', margin: '0 auto' }}>
+                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', maxWidth: '55ch', margin: '0 auto', color: 'rgba(255,255,255,0.95)' }}>
                             Discover the heart behind 1st School — where passion for early childhood education meets decades of experience.
                         </motion.p>
                     </motion.div>

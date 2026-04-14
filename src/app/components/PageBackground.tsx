@@ -94,6 +94,17 @@ export default function PageBackground({
                 />
             </motion.div>
 
+            {/* Dark gradient overlay & slight blur for text readability */}
+            <div
+                style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.65) 100%)',
+                    backdropFilter: 'blur(3px)',
+                    WebkitBackdropFilter: 'blur(3px)',
+                    pointerEvents: 'none',
+                }}
+            />
         </div>
     );
 }

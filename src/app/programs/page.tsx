@@ -86,11 +86,11 @@ export default function ProgramsPage() {
                 <PageBackground slot="programs-bg" />
                 <div className="container" style={{ position: 'relative', textAlign: 'center', zIndex: 1 }}>
                     <motion.div initial="hidden" animate="show" variants={stagger} className="hero-text-shadow hero-text-white">
-                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Our Programs</motion.p>
-                        <motion.h1 variants={fadeUp} style={{ fontSize: 'var(--text-3xl)', fontFamily: 'var(--font-display)', fontWeight: 700, lineHeight: 1.1, marginBottom: '1.25rem' }}>
+                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem', color: 'white' }}>Our Programs</motion.p>
+                        <motion.h1 variants={fadeUp} style={{ fontSize: 'var(--text-3xl)', fontFamily: 'var(--font-display)', fontWeight: 700, lineHeight: 1.1, marginBottom: '1.25rem', color: 'white' }}>
                             Learning Programs for Every Age
                         </motion.h1>
-                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-lg)', maxWidth: '600px', margin: '0 auto' }}>
+                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-lg)', maxWidth: '600px', margin: '0 auto', color: 'rgba(255,255,255,0.95)' }}>
                             From playgroup to UKG, we offer age-appropriate programs that nurture curiosity, creativity, and confidence in every child.
                         </motion.p>
                     </motion.div>

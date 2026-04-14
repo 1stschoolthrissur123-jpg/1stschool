@@ -12,7 +12,7 @@ const fadeUp = {
 };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 
-const SCHOOL_WHATSAPP = '919876543210';
+const SCHOOL_WHATSAPP = '+919946555972';
 
 const CONTACT_INFO = [
     {
@@ -26,8 +26,8 @@ const CONTACT_INFO = [
     },
     {
         icon: Phone, title: 'Phone', color: '#1E88E5',
-        lines: ['+91 98765 43210'],
-        link: 'tel:+919876543210',
+        lines: ['+91 9946555972'],
+        link: 'tel:+919946555972',
     },
     {
         icon: Mail, title: 'Email', color: '#8E24AA',
@@ -82,11 +82,11 @@ export default function ContactPage() {
                 <PageBackground slot="contact-bg" />
                 <div className="container" style={{ position: 'relative', textAlign: 'center', zIndex: 1 }}>
                     <motion.div initial="hidden" animate="show" variants={stagger} className="hero-text-shadow hero-text-white">
-                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Get in Touch</motion.p>
-                        <motion.h1 variants={fadeUp} style={{ fontSize: 'var(--text-3xl)', fontFamily: 'var(--font-display)', fontWeight: 700, lineHeight: 1.1, marginBottom: '1.25rem' }}>
+                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem', color: 'white' }}>Get in Touch</motion.p>
+                        <motion.h1 variants={fadeUp} style={{ fontSize: 'var(--text-3xl)', fontFamily: 'var(--font-display)', fontWeight: 700, lineHeight: 1.1, marginBottom: '1.25rem', color: 'white' }}>
                             Contact & Enrollment
                         </motion.h1>
-                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', maxWidth: '50ch', margin: '0 auto' }}>
+                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', maxWidth: '50ch', margin: '0 auto', color: 'rgba(255,255,255,0.95)' }}>
                             Reach out to schedule a campus visit or begin the enrollment process for your little one.
                         </motion.p>
                     </motion.div>
