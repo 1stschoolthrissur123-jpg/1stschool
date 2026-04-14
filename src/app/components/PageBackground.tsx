@@ -11,7 +11,7 @@ interface PageBackgroundProps {
 
 export default function PageBackground({
     slot,
-    lightGradient = `linear-gradient(to bottom, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.82) 100%)`
+    lightGradient = `linear-gradient(to bottom, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.95) 100%)`
 }: PageBackgroundProps) {
     const [bgImg, setBgImg] = useState<string | null>(null);
     const [mouseX, setMouseX] = useState(0);
@@ -22,7 +22,7 @@ export default function PageBackground({
     // Parallax: image moves up as user scrolls down — creates depth
     const imgY = useTransform(scrollY, [0, 600], ['0%', '18%']);
     const imgScale = useTransform(scrollY, [0, 600], [1.08, 1.18]);
-    const overlayOpacity = useTransform(scrollY, [0, 400], [0.55, 0.82]);
+    const overlayOpacity = useTransform(scrollY, [0, 400], [0.8, 0.95]); // Increased for text readability
 
     useEffect(() => {
         fetch('/api/gallery', { cache: 'no-store' })
@@ -103,6 +103,8 @@ export default function PageBackground({
                     inset: 0,
                     opacity: overlayOpacity,
                     background: lightGradient,
+                    backdropFilter: 'blur(5px)',
+                    WebkitBackdropFilter: 'blur(5px)',
                 }}
             />
 
