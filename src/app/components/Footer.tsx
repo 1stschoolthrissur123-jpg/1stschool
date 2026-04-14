@@ -48,17 +48,10 @@ export default function Footer() {
                     <div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
                             <div style={{
-                                width: 36, height: 36, borderRadius: 'var(--r-md)',
-                                background: '#FDD835', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                height: 40, borderRadius: 'var(--r-md)', overflow: 'hidden',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center',
                             }}>
-                                <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: '#E53935' }}>
-                                    1<sup style={{ fontSize: '0.45rem' }}>st</sup>
-                                </span>
-                            </div>
-                            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', display: 'flex', gap: '1px' }}>
-                                {'1st School'.split('').map((c, i) => (
-                                    <span key={i} style={{ color: c === ' ' ? 'transparent' : logoColors[i % logoColors.length] }}>{c}</span>
-                                ))}
+                                <img src="/logo.jpg" alt="1st School Logo" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
                             </div>
                         </div>
                         <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
@@ -109,7 +102,7 @@ export default function Footer() {
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Phone size={15} style={{ flexShrink: 0, color: 'var(--green)' }} />
-                                <a href="tel:+919876543210" style={{ color: 'var(--text-muted)' }}>+91 98765 43210</a>
+                                <a href="tel:+919876543210" style={{ color: 'var(--text-muted)' }}>+91 9946555972</a>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Mail size={15} style={{ flexShrink: 0, color: 'var(--blue)' }} />

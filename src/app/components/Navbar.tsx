@@ -69,21 +69,10 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none', flexShrink: 0 }}>
                     <div style={{
-                        width: 42, height: 42, borderRadius: 'var(--r-md)', overflow: 'hidden',
-                        background: '#FDD835', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        boxShadow: '0 2px 8px rgba(253,216,53,0.3)',
+                        height: 48, borderRadius: 'var(--r-md)', overflow: 'hidden',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
-                        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.1rem', color: '#E53935', lineHeight: 1 }}>
-                            1<sup style={{ fontSize: '0.5rem', color: '#E53935' }}>st</sup>
-                        </span>
-                    </div>
-                    <div>
-                        <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.05rem', color: 'var(--text)', lineHeight: 1.1, display: 'flex', gap: '2px' }}>
-                            {'1st School'.split('').map((char, i) => (
-                                <span key={i} style={{ color: char === ' ' ? 'transparent' : logoColors[i % logoColors.length] }}>{char}</span>
-                            ))}
-                        </div>
-                        <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Preschool & Montessori</div>
+                        <img src="/logo.jpg" alt="1st School Logo" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
                     </div>
                 </Link>
 
