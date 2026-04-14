@@ -4,8 +4,16 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface GalleryItem { id: string; url: string; slot: string; alt: string; }
 
-export default function HeroBackground() {
-    const [heroImg, setHeroImg] = useState<string | null>(null);
+interface PageBackgroundProps {
+    slot: string;
+    lightGradient?: string;
+}
+
+export default function PageBackground({
+    slot,
+    lightGradient = `linear-gradient(to bottom, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.82) 100%)`
+}: PageBackgroundProps) {
+    const [bgImg, setBgImg] = useState<string | null>(null);
     const [mouseX, setMouseX] = useState(0);
     const [mouseY, setMouseY] = useState(0);
     const ref = useRef<HTMLDivElement>(null);
@@ -23,11 +31,11 @@ export default function HeroBackground() {
                 const items: GalleryItem[] = Array.isArray(data)
                     ? data
                     : Array.isArray(data?.gallery) ? data.gallery : [];
-                const hero = items.find(g => g.slot === 'hero');
-                if (hero) setHeroImg(hero.url);
+                const match = items.find(g => g.slot === slot);
+                if (match) setBgImg(match.url);
             })
             .catch(() => { });
-    }, []);
+    }, [slot]);
 
     function handleMouseMove(e: React.MouseEvent) {
         if (!ref.current) return;
@@ -43,7 +51,7 @@ export default function HeroBackground() {
         setMouseY(0);
     }
 
-    if (!heroImg) return null;
+    if (!bgImg) return null;
 
     return (
         <div
@@ -76,8 +84,8 @@ export default function HeroBackground() {
                 transition={{ type: 'spring', damping: 40, stiffness: 160 }}
             >
                 <img
-                    src={heroImg}
-                    alt="1st School campus"
+                    src={bgImg}
+                    alt={`1st School background for ${slot}`}
                     style={{
                         width: '100%',
                         height: '100%',
@@ -94,14 +102,7 @@ export default function HeroBackground() {
                     position: 'absolute',
                     inset: 0,
                     opacity: overlayOpacity,
-                    background: `
-            linear-gradient(
-              to bottom,
-              rgba(255,255,255,0.88) 0%,
-              rgba(255,255,255,0.75) 40%,
-              rgba(255,255,255,0.82) 100%
-            )
-          `,
+                    background: lightGradient,
                 }}
             />
 

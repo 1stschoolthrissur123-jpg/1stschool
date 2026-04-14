@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Clock, Phone, Mail, Send, CheckCircle, MessageCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import PageBackground from '../components/PageBackground';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 28 },
@@ -76,15 +77,13 @@ export default function ContactPage() {
         <div style={{ background: 'var(--bg)', color: 'var(--text)', fontFamily: 'var(--font-body)' }}>
             <Navbar />
 
-            {/* Header */}
-            <section style={{ paddingTop: 'calc(72px + clamp(3rem,6vw,5rem))', paddingBottom: 'clamp(2rem,4vw,3rem)', background: 'var(--surface)', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-                    <div style={{ position: 'absolute', top: '-15%', right: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(30,136,229,0.08) 0%, transparent 65%)', borderRadius: '50%' }} />
-                </div>
-                <div className="container" style={{ position: 'relative', textAlign: 'center' }}>
+            {/* Header section with 3D Background */}
+            <section style={{ paddingTop: 'calc(72px + clamp(3rem,6vw,5rem))', paddingBottom: 'clamp(2rem,4vw,3rem)', position: 'relative', overflow: 'hidden' }}>
+                <PageBackground slot="contact-bg" />
+                <div className="container" style={{ position: 'relative', textAlign: 'center', zIndex: 1 }}>
                     <motion.div initial="hidden" animate="show" variants={stagger}>
                         <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Get in Touch</motion.p>
-                        <motion.h1 variants={fadeUp} style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-2xl)', color: 'var(--text)', marginBottom: '1rem' }}>
+                        <motion.h1 variants={fadeUp} style={{ fontSize: 'var(--text-3xl)', fontFamily: 'var(--font-display)', fontWeight: 700, lineHeight: 1.1, marginBottom: '1.25rem' }}>
                             Contact & Enrollment
                         </motion.h1>
                         <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', color: 'var(--text-muted)', maxWidth: '50ch', margin: '0 auto' }}>

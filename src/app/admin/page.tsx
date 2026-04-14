@@ -7,8 +7,11 @@ import Link from 'next/link';
 interface GalleryItem { id: string; url: string; slot: string; alt: string; }
 
 const SLOTS = [
-    { slot: 'hero', label: '🏠 Hero Banner', desc: 'Main homepage hero image' },
-    { slot: 'about', label: '📖 About Section', desc: 'About page main image' },
+    { slot: 'hero', label: '🏠 Hero Banner', desc: 'Main homepage hero background' },
+    { slot: 'programs-bg', label: '📚 Programs Background', desc: 'Programs page 3D background' },
+    { slot: 'about-bg', label: '📖 About Background', desc: 'About page 3D background' },
+    { slot: 'contact-bg', label: '📞 Contact Background', desc: 'Contact page 3D background' },
+    { slot: 'about', label: '📖 About Section Image', desc: 'About page inline image' },
     { slot: 'gallery-1', label: '🖼️ Gallery 1', desc: 'Gallery photo' },
     { slot: 'gallery-2', label: '🖼️ Gallery 2', desc: 'Gallery photo' },
     { slot: 'gallery-3', label: '🖼️ Gallery 3', desc: 'Gallery photo' },

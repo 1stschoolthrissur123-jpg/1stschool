@@ -5,6 +5,7 @@ import { Check, Shield, Users, Award, BookOpen, Heart, Star, Target, Eye, ArrowR
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import PageBackground from '../components/PageBackground';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 28 },
@@ -50,12 +51,10 @@ export default function AboutPage() {
         <div style={{ background: 'var(--bg)', color: 'var(--text)', fontFamily: 'var(--font-body)' }}>
             <Navbar />
 
-            {/* Header */}
-            <section style={{ paddingTop: 'calc(72px + clamp(3rem,6vw,5rem))', paddingBottom: 'clamp(2rem,4vw,3rem)', background: 'var(--surface)', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-                    <div style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(67,160,71,0.08) 0%, transparent 65%)', borderRadius: '50%' }} />
-                </div>
-                <div className="container" style={{ position: 'relative', textAlign: 'center' }}>
+            {/* Header section with 3D Background */}
+            <section style={{ paddingTop: 'calc(72px + clamp(3rem,6vw,5rem))', paddingBottom: 'clamp(2rem,4vw,3rem)', position: 'relative', overflow: 'hidden' }}>
+                <PageBackground slot="about-bg" />
+                <div className="container" style={{ position: 'relative', textAlign: 'center', zIndex: 1 }}>
                     <motion.div initial="hidden" animate="show" variants={stagger}>
                         <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>About Us</motion.p>
                         <motion.h1 variants={fadeUp} style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-2xl)', color: 'var(--text)', marginBottom: '1rem' }}>

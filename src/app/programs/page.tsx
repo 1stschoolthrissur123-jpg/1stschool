@@ -7,6 +7,7 @@ import {
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import PageBackground from '../components/PageBackground';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 28 },
@@ -80,20 +81,16 @@ export default function ProgramsPage() {
         <div style={{ background: 'var(--bg)', color: 'var(--text)', fontFamily: 'var(--font-body)' }}>
             <Navbar />
 
-            {/* Header */}
-            <section style={{ paddingTop: 'calc(72px + clamp(3rem,6vw,5rem))', paddingBottom: 'clamp(2rem,4vw,3rem)', background: 'var(--surface)', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-                    <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(142,36,170,0.08) 0%, transparent 65%)', borderRadius: '50%' }} />
-                </div>
-                <div className="container" style={{ position: 'relative', textAlign: 'center' }}>
+            {/* Header section with 3D Background */}
+            <section style={{ paddingTop: 'calc(72px + clamp(3rem,6vw,5rem))', paddingBottom: 'clamp(2rem,4vw,3rem)', position: 'relative', overflow: 'hidden' }}>
+                <PageBackground slot="programs-bg" />
+                <div className="container" style={{ position: 'relative', textAlign: 'center', zIndex: 1 }}>
                     <motion.div initial="hidden" animate="show" variants={stagger}>
-                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
-                            Our Programs
-                        </motion.p>
-                        <motion.h1 variants={fadeUp} style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-2xl)', color: 'var(--text)', marginBottom: '1rem' }}>
+                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Our Programs</motion.p>
+                        <motion.h1 variants={fadeUp} style={{ fontSize: 'var(--text-3xl)', fontFamily: 'var(--font-display)', fontWeight: 700, lineHeight: 1.1, marginBottom: '1.25rem' }}>
                             Learning Programs for Every Age
                         </motion.h1>
-                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', color: 'var(--text-muted)', maxWidth: '55ch', margin: '0 auto' }}>
+                        <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-lg)', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
                             From playgroup to UKG, we offer age-appropriate programs that nurture curiosity, creativity, and confidence in every child.
                         </motion.p>
                     </motion.div>
