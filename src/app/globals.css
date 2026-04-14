@@ -189,9 +189,17 @@ ol {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ─── Hero Dark-mode Overlay ────────────────────────── */
-.dark .hero-dark-overlay {
-  background: rgba(0, 0, 0, 0.35);
+/* ─── Hero Text Styling ─────────────────────────────── */
+.hero-text-shadow {
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text-white {
+  color: #FFFFFF;
+}
+
+.hero-text-white * {
+  color: inherit;
 }
 
 /* ─── 3D perspective wrapper ────────────────────────── */

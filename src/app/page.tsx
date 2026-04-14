@@ -61,7 +61,7 @@ export default function HomePage() {
         <div className="container section" style={{ position: 'relative', zIndex: 1, width: '100%' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 'clamp(2rem,5vw,4rem)', alignItems: 'center' }}>
             {/* Content */}
-            <motion.div initial="hidden" animate="show" variants={stagger} style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1.25rem,2.5vw,1.75rem)', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+            <motion.div initial="hidden" animate="show" variants={stagger} className="hero-text-shadow" style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(1.25rem,2.5vw,1.75rem)', textAlign: 'center', maxWidth: '800px', margin: '0 auto', color: 'white' }}>
               {/* Badge */}
               <motion.div variants={fadeUp}>
                 <span style={{
@@ -90,7 +90,7 @@ export default function HomePage() {
               </motion.h1>
 
               {/* Desc */}
-              <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-lg)', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '60ch', margin: '0 auto' }}>
+              <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-lg)', color: 'rgba(255,255,255,0.95)', lineHeight: 1.7, maxWidth: '60ch', margin: '0 auto' }}>
                 Welcome to 1st School — a nurturing preschool and Montessori in Thrissur where every child's unique potential is celebrated through play-based learning and creative exploration.
               </motion.p>
 
@@ -112,7 +112,7 @@ export default function HomePage() {
                 {STATS.map(s => (
                   <div key={s.label}>
                     <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.375rem, 2.5vw, 2rem)', color: s.color, lineHeight: 1 }}>{s.num}</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)', marginTop: '0.3rem', lineHeight: 1.3 }}>{s.label}</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.85)', marginTop: '0.3rem', lineHeight: 1.3 }}>{s.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -127,10 +127,11 @@ export default function HomePage() {
           style={{ position: 'absolute', bottom: '25%', right: '8%', fontSize: '2.5rem', opacity: 0.6 }}>📚</motion.div>
         <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
           style={{ position: 'absolute', top: '60%', left: '10%', fontSize: '2rem', opacity: 0.5 }}>🌈</motion.div>
-      </section>
+      </section >
 
       {/* ═══ HIGHLIGHTS ═════════════════════════════════ */}
-      <section style={{ background: 'var(--surface)' }} className="section">
+      < section style={{ background: 'var(--surface)' }
+      } className="section" >
         <div className="container">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }} variants={stagger} style={{ marginBottom: 'clamp(2rem,4vw,3.5rem)', textAlign: 'center' }}>
             <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
@@ -170,10 +171,10 @@ export default function HomePage() {
             </Link>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* ═══ TESTIMONIALS ═══════════════════════════════ */}
-      <section className="section">
+      < section className="section" >
         <div className="container">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }} variants={stagger} style={{ marginBottom: 'clamp(2rem,4vw,3.5rem)', textAlign: 'center' }}>
             <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
@@ -207,10 +208,10 @@ export default function HomePage() {
             })}
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* ═══ CTA BANNER ═════════════════════════════════ */}
-      <section style={{ background: 'var(--rainbow)', padding: 'clamp(3rem,6vw,5rem) 0' }}>
+      < section style={{ background: 'var(--rainbow)', padding: 'clamp(3rem,6vw,5rem) 0' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.75rem,3.5vw,2.5rem)', color: 'white', marginBottom: '1rem' }}>
@@ -229,9 +230,9 @@ export default function HomePage() {
             </Link>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       <Footer />
-    </div>
+    </div >
   );
 }
