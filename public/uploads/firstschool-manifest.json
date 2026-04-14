@@ -73,11 +73,36 @@
       "addedAt": "2026-04-13T18:19:17.513Z"
     },
     {
-      "id": "hero-1776164395508",
-      "url": "/uploads/hero.jpg?t=1776164395508",
+      "id": "programs-bg-1776165692700",
+      "url": "/uploads/programs-bg.jpg?t=1776165692700",
+      "slot": "programs-bg",
+      "alt": "1st School — programs-bg",
+      "filename": "programs-bg.jpg",
+      "addedAt": "2026-04-14T11:21:32.700Z"
+    },
+    {
+      "id": "contact-bg-1776165925306",
+      "url": "/uploads/contact-bg.jpg?t=1776165925306",
+      "slot": "contact-bg",
+      "alt": "1st School — contact-bg",
+      "filename": "contact-bg.jpg",
+      "addedAt": "2026-04-14T11:25:25.307Z"
+    },
+    {
+      "id": "about-bg-1776166731126",
+      "url": "/uploads/about-bg.jpg?t=1776166731125",
+      "slot": "about-bg",
+      "alt": "1st School — about-bg",
+      "filename": "about-bg.jpg",
+      "addedAt": "2026-04-14T11:38:51.126Z"
+    },
+    {
+      "id": "hero-1776181225074",
+      "url": "/uploads/hero.jpg?t=1776181225073",
       "slot": "hero",
       "alt": "1st School — hero",
       "filename": "hero.jpg",
+<<<<<<< Updated upstream
       "addedAt": "2026-04-14T10:59:55.508Z"
     },
     {
@@ -103,6 +128,9 @@
       "alt": "1st School — contact-bg",
       "filename": "contact-bg.jpg",
       "addedAt": "2026-04-14T20:06:40.827Z"
+=======
+      "addedAt": "2026-04-14T15:40:25.074Z"
+>>>>>>> Stashed changes
     }
   ],
   "sections": {
