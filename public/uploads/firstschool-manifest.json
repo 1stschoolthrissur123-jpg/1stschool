@@ -46,5 +46,13 @@
     "alt": "1st School — gallery-1",
     "filename": "gallery-1.jpg",
     "addedAt": "2026-04-14T21:02:27.753Z"
+  },
+  {
+    "id": "gallery-2-1776200559897",
+    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-2.jpg?t=1776200559897",
+    "slot": "gallery-2",
+    "alt": "1st School — gallery-2",
+    "filename": "gallery-2.jpg",
+    "addedAt": "2026-04-14T21:02:39.897Z"
   }
 ]
