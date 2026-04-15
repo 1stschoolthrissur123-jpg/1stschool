@@ -96,10 +96,6 @@ export default function Footer() {
                             Contact Us
                         </h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
-                                <MapPin size={15} style={{ flexShrink: 0, marginTop: 3, color: 'var(--red)' }} />
-                                <span>Nellikunnu, Thrissur,<br />Kerala — 680 005</span>
-                            </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Phone size={15} style={{ flexShrink: 0, color: 'var(--green)' }} />
                                 <a href="tel:+919876543210" style={{ color: 'var(--text-muted)' }}>+91 9946555972</a>
@@ -111,23 +107,24 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Map */}
+                    {/* Map / Branches */}
                     <div>
                         <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                            Find Us
+                            Our Campuses
                         </h4>
-                        <div style={{
-                            borderRadius: 'var(--r-lg)', overflow: 'hidden', border: '1px solid var(--border)',
-                            height: 140,
-                        }}>
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.5!2d76.214!3d10.527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDMxJzM3LjIiTiA3NsKwMTInNTAuNCJF!5e0!3m2!1sen!2sin!4v1"
-                                width="100%" height="100%"
-                                style={{ border: 0, filter: 'grayscale(0.3)' }}
-                                allowFullScreen loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                title="1st School Location"
-                            />
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            <a href="https://share.google/koaH0Q7KJsxk1cSiX" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
+                                <MapPin size={15} style={{ color: 'var(--red)', flexShrink: 0 }} /> Irinjalakuda Branch
+                            </a>
+                            <a href="https://share.google/faIrM1F70NOu25XAV" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
+                                <MapPin size={15} style={{ color: 'var(--blue)', flexShrink: 0 }} /> Guruvayoor Branch
+                            </a>
+                            <a href="https://share.google/iunmcB4bkCKKWdgNc" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
+                                <MapPin size={15} style={{ color: 'var(--green)', flexShrink: 0 }} /> Thrissur Branch 1
+                            </a>
+                            <a href="https://share.google/zIZR6GaHvvmiog24B" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
+                                <MapPin size={15} style={{ color: 'var(--orange)', flexShrink: 0 }} /> Thrissur Branch 2
+                            </a>
                         </div>
                     </div>
                 </div>

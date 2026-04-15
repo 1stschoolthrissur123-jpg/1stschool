@@ -16,9 +16,13 @@ const SCHOOL_WHATSAPP = '+919946555972';
 
 const CONTACT_INFO = [
     {
-        icon: MapPin, title: 'Location', color: '#E53935',
-        lines: ['Nellikunnu', 'Thrissur, Kerala — 680 005'],
-        link: 'https://www.google.com/maps/search/1st+School+Nellikunnu+Thrissur+Kerala',
+        icon: MapPin, title: 'Our Campuses', color: '#E53935',
+        locations: [
+            { label: 'Irinjalakuda Branch', link: 'https://share.google/koaH0Q7KJsxk1cSiX' },
+            { label: 'Guruvayoor Branch', link: 'https://share.google/faIrM1F70NOu25XAV' },
+            { label: 'Thrissur Branch 1', link: 'https://share.google/iunmcB4bkCKKWdgNc' },
+            { label: 'Thrissur Branch 2', link: 'https://share.google/zIZR6GaHvvmiog24B' },
+        ]
     },
     {
         icon: Clock, title: 'Working Hours', color: '#43A047',
@@ -119,11 +123,21 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <div style={{ fontWeight: 700, fontSize: 'var(--text-sm)', marginBottom: '0.375rem' }}>{item.title}</div>
-                                            {item.lines.map((line, li) => (
-                                                item.link && li === 0
-                                                    ? <a key={line} href={item.link} style={{ display: 'block', fontSize: 'var(--text-sm)', color: item.color, fontWeight: 600 }}>{line}</a>
-                                                    : <div key={line} style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', lineHeight: 1.6 }}>{line}</div>
-                                            ))}
+                                            {item.locations ? (
+                                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                                                    {item.locations.map(loc => (
+                                                        <a key={loc.label} href={loc.link} target="_blank" rel="noreferrer" style={{ fontSize: 'var(--text-sm)', color: item.color, fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                                                            {loc.label} <span style={{ fontSize: '0.8em' }}>↗</span>
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            ) : (
+                                                item.lines?.map((line, li) => (
+                                                    item.link && li === 0
+                                                        ? <a key={line} href={item.link} style={{ display: 'block', fontSize: 'var(--text-sm)', color: item.color, fontWeight: 600 }}>{line}</a>
+                                                        : <div key={line} style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', lineHeight: 1.6 }}>{line}</div>
+                                                ))
+                                            )}
                                         </div>
                                     </motion.div>
                                 );
