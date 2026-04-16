@@ -12,7 +12,7 @@ const fadeUp = {
 };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.09 } } };
 
-interface GalleryItem { id: string; url: string; slot: string; alt: string; }
+interface GalleryItem { id: string; url: string; slot: string; alt: string; addedAt?: string; }
 
 export default function GalleryPage() {
     const [gallery, setGallery] = useState<GalleryItem[]>([]);
@@ -24,7 +24,10 @@ export default function GalleryPage() {
             .then(r => r.ok ? r.json() : [])
             .then((items: GalleryItem[]) => {
                 const list = Array.isArray(items) ? items : [];
-                setGallery(list.filter(g => g.slot.startsWith('gallery')));
+                const sorted = list
+                    .filter(g => g.slot.startsWith('gallery'))
+                    .sort((a, b) => new Date(b.addedAt || 0).getTime() - new Date(a.addedAt || 0).getTime());
+                setGallery(sorted);
                 setLoading(false);
             })
             .catch(() => setLoading(false));
