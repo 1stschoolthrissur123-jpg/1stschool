@@ -20,7 +20,6 @@ const CONTACT_INFO = [
         locations: [
             { label: 'Thrissur Branch 1', link: 'https://share.google/iunmcB4bkCKKWdgNc' },
             { label: 'Thrissur Branch 2', link: 'https://share.google/zIZR6GaHvvmiog24B' },
-            { label: 'Irinjalakuda Branch', link: 'https://share.google/koaH0Q7KJsxk1cSiX' },
             { label: 'Guruvayoor Branch', link: 'https://share.google/faIrM1F70NOu25XAV' },
 
         ]

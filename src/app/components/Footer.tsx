@@ -119,9 +119,7 @@ export default function Footer() {
                             <a href="https://share.google/zIZR6GaHvvmiog24B" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
                                 <MapPin size={15} style={{ color: 'var(--orange)', flexShrink: 0 }} /> Thrissur Branch 2
                             </a>
-                            <a href="https://share.google/koaH0Q7KJsxk1cSiX" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
-                                <MapPin size={15} style={{ color: 'var(--red)', flexShrink: 0 }} /> Irinjalakuda Branch
-                            </a>
+
                             <a href="https://share.google/faIrM1F70NOu25XAV" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
                                 <MapPin size={15} style={{ color: 'var(--blue)', flexShrink: 0 }} /> Guruvayoor Branch
                             </a>
