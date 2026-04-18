@@ -18,7 +18,7 @@ const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 const PROGRAMS = [
     {
         title: 'Playgroup',
-        age: '1.1 – 2.1 years',
+        age: '2 years',
         color: '#E53935',
         bg: 'rgba(229,57,53,0.1)',
         icon: Baby,
@@ -29,7 +29,7 @@ const PROGRAMS = [
     },
     {
         title: 'Nursery (PreKG)',
-        age: '2.1 – 3.1 years',
+        age: '3 years',
         color: '#1E88E5',
         bg: 'rgba(30,136,229,0.1)',
         icon: Sparkles,
@@ -41,7 +41,7 @@ const PROGRAMS = [
 
     {
         title: 'LKG (KG1)',
-        age: '3.1 – 4.1 years',
+        age: '4 years',
         color: '#43A047',
         bg: 'rgba(67,160,71,0.1)',
         icon: Palette,
@@ -52,7 +52,7 @@ const PROGRAMS = [
     },
     {
         title: 'UKG (KG2)',
-        age: '4.1 – 5.1 years',
+        age: '5 years',
         color: '#FB8C00',
         bg: 'rgba(251,140,0,0.1)',
         icon: GraduationCap,

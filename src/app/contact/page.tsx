@@ -196,11 +196,10 @@ export default function ContactPage() {
                                             <label style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.375rem' }}>Preferred Program</label>
                                             <select value={formData.program} onChange={e => setFormData(d => ({ ...d, program: e.target.value }))} style={{ ...inputStyle, cursor: 'pointer' }}>
                                                 <option value="">Select program...</option>
-                                                <option>Playgroup (1.5–2.5 yrs)</option>
-                                                <option>Nursery (2.5–3.5 yrs)</option>
-                                                <option>Montessori (2.5–5 yrs)</option>
-                                                <option>LKG (3.5–4.5 yrs)</option>
-                                                <option>UKG (4.5–5.5 yrs)</option>
+                                                <option>Playgroup (2 yrs)</option>
+                                                <option>Nursery (PreKG) (3 yrs)</option>
+                                                <option>LKG (KG1) (4 yrs)</option>
+                                                <option>UKG (KG2) (5 yrs)</option>
                                             </select>
                                         </div>
                                         <div style={{ gridColumn: '1 / -1' }}>
