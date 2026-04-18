@@ -18,7 +18,7 @@ const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 const PROGRAMS = [
     {
         title: 'Playgroup',
-        age: '1.5 – 2.5 years',
+        age: '1.1 – 2.1 years',
         color: '#E53935',
         bg: 'rgba(229,57,53,0.1)',
         icon: Baby,
@@ -27,8 +27,8 @@ const PROGRAMS = [
         desc: 'A gentle introduction to structured learning through play, designed for toddlers to explore, discover, and develop early social skills in a safe, nurturing environment.',
     },
     {
-        title: 'Nursery',
-        age: '2.5 – 3.5 years',
+        title: 'Nursery (PreKG)',
+        age: '2.1 – 3.1 years',
         color: '#1E88E5',
         bg: 'rgba(30,136,229,0.1)',
         icon: Sparkles,
@@ -36,20 +36,10 @@ const PROGRAMS = [
         features: ['Creative Arts & Crafts', 'Pre-Reading Activities', 'Number Basics', 'Outdoor Play', 'Circle Time'],
         desc: 'Building foundational skills through hands-on activities, creative arts, and guided play. Children develop curiosity, language, and pre-literacy skills.',
     },
+
     {
-        title: 'Montessori',
-        age: '2.5 – 5 years',
-        color: '#8E24AA',
-        bg: 'rgba(142,36,170,0.1)',
-        icon: BookOpen,
-        emoji: '📖',
-        features: ['Self-Directed Learning', 'Sensorial Materials', 'Practical Life Skills', 'Cultural Studies', 'Mixed-Age Groups'],
-        desc: 'Our authentic Montessori program fosters independence, concentration, and a love of learning through carefully designed materials and child-led exploration.',
-        featured: true,
-    },
-    {
-        title: 'LKG',
-        age: '3.5 – 4.5 years',
+        title: 'LKG (KG1)',
+        age: '3.1 – 4.1 years',
         color: '#43A047',
         bg: 'rgba(67,160,71,0.1)',
         icon: Palette,
@@ -58,8 +48,8 @@ const PROGRAMS = [
         desc: 'A structured yet joyful learning experience where children begin formal academics while maintaining the magic of play and creative exploration.',
     },
     {
-        title: 'UKG',
-        age: '4.5 – 5.5 years',
+        title: 'UKG (KG2)',
+        age: '4.1 – 5.1 years',
         color: '#FB8C00',
         bg: 'rgba(251,140,0,0.1)',
         icon: GraduationCap,

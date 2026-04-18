@@ -17,6 +17,7 @@ export default function Navbar() {
     const [isDark, setIsDark] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [logoUrl, setLogoUrl] = useState('/logo.png');
     const pathname = usePathname();
 
     useEffect(() => {
@@ -49,6 +50,16 @@ export default function Navbar() {
         setMenuOpen(false);
     }, [pathname]);
 
+    useEffect(() => {
+        fetch('/api/gallery')
+            .then(r => r.json())
+            .then(data => {
+                const logo = data.find((g: any) => g.slot === 'logo');
+                if (logo) setLogoUrl(logo.url);
+            })
+            .catch(() => { });
+    }, []);
+
     const logoColors = ['#E53935', '#1E88E5', '#43A047', '#FDD835', '#8E24AA', '#FB8C00'];
 
     return (
@@ -72,7 +83,17 @@ export default function Navbar() {
                         height: 48, borderRadius: 'var(--r-md)', overflow: 'hidden',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
-                        <img src="/logo.jpg" alt="1st School Logo" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
+                        <img 
+                            src={logoUrl} 
+                            alt="1st School Logo" 
+                            style={{ height: '100%', width: 'auto', objectFit: 'contain' }} 
+                            onError={(e) => {
+                                // Fallback to jpg if png is not found and we're not using a managed URL
+                                if (logoUrl === '/logo.png') {
+                                    setLogoUrl('/logo.jpg');
+                                }
+                            }}
+                        />
                     </div>
                 </Link>
 

@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Heart } from 'lucide-react';
 
 const FooterLinks = [
@@ -34,7 +35,18 @@ const SocialLinks = [
 ];
 
 export default function Footer() {
+    const [logoUrl, setLogoUrl] = useState('/logo.png');
     const logoColors = ['#E53935', '#1E88E5', '#43A047', '#FDD835', '#8E24AA', '#FB8C00'];
+
+    useEffect(() => {
+        fetch('/api/gallery')
+            .then(r => r.json())
+            .then(data => {
+                const logo = data.find((g: any) => g.slot === 'logo');
+                if (logo) setLogoUrl(logo.url);
+            })
+            .catch(() => { });
+    }, []);
 
     return (
         <footer style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
@@ -51,7 +63,16 @@ export default function Footer() {
                                 height: 40, borderRadius: 'var(--r-md)', overflow: 'hidden',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                             }}>
-                                <img src="/logo.jpg" alt="1st School Logo" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
+                                <img 
+                                    src={logoUrl} 
+                                    alt="1st School Logo" 
+                                    style={{ height: '100%', width: 'auto', objectFit: 'contain' }} 
+                                    onError={(e) => {
+                                        if (logoUrl === '/logo.png') {
+                                            setLogoUrl('/logo.jpg');
+                                        }
+                                    }}
+                                />
                             </div>
                         </div>
                         <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
@@ -114,10 +135,10 @@ export default function Footer() {
                         </h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <a href="https://share.google/iunmcB4bkCKKWdgNc" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
-                                <MapPin size={15} style={{ color: 'var(--green)', flexShrink: 0 }} /> Thrissur Branch 1
+                                <MapPin size={15} style={{ color: 'var(--green)', flexShrink: 0 }} /> Thrissur Westfort Branch
                             </a>
                             <a href="https://share.google/zIZR6GaHvvmiog24B" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
-                                <MapPin size={15} style={{ color: 'var(--orange)', flexShrink: 0 }} /> Thrissur Branch 2
+                                <MapPin size={15} style={{ color: 'var(--orange)', flexShrink: 0 }} /> Thrissur Eastfort Branch
                             </a>
 
                             <a href="https://share.google/faIrM1F70NOu25XAV" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>

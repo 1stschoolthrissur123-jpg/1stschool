@@ -8,6 +8,7 @@ interface GalleryItem { id: string; url: string; slot: string; alt: string; adde
 
 const FIXED_SLOTS = [
     { slot: 'hero', label: '🏠 Hero Banner', desc: 'Main homepage hero background' },
+    { slot: 'logo', label: '🖼️ School Logo', desc: 'Main logo (transparent PNG recommended)' },
     { slot: 'programs-bg', label: '📚 Programs Background', desc: 'Programs page 3D background' },
     { slot: 'about-bg', label: '📖 About Background', desc: 'About page 3D background' },
     { slot: 'contact-bg', label: '📞 Contact Background', desc: 'Contact page 3D background' },
