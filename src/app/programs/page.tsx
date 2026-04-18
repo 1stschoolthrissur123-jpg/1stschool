@@ -25,6 +25,7 @@ const PROGRAMS = [
         emoji: '🧸',
         features: ['Sensory Exploration', 'Social Interaction', 'Motor Skill Development', 'Story Time & Songs', 'Safe Play Environment'],
         desc: 'A gentle introduction to structured learning through play, designed for toddlers to explore, discover, and develop early social skills in a safe, nurturing environment.',
+        featured: false,
     },
     {
         title: 'Nursery (PreKG)',
@@ -35,6 +36,7 @@ const PROGRAMS = [
         emoji: '🌈',
         features: ['Creative Arts & Crafts', 'Pre-Reading Activities', 'Number Basics', 'Outdoor Play', 'Circle Time'],
         desc: 'Building foundational skills through hands-on activities, creative arts, and guided play. Children develop curiosity, language, and pre-literacy skills.',
+        featured: true,
     },
 
     {
@@ -46,6 +48,7 @@ const PROGRAMS = [
         emoji: '🎨',
         features: ['Phonics & Reading', 'Basic Mathematics', 'Science Discovery', 'Art & Music', 'Physical Education'],
         desc: 'A structured yet joyful learning experience where children begin formal academics while maintaining the magic of play and creative exploration.',
+        featured: false,
     },
     {
         title: 'UKG (KG2)',
@@ -56,6 +59,7 @@ const PROGRAMS = [
         emoji: '🎓',
         features: ['Advanced Literacy', 'Math Operations', 'Environmental Studies', 'Computer Awareness', 'School Readiness Program'],
         desc: 'Comprehensive preparation for primary school with strong foundations in literacy, numeracy, and social skills. We ensure your child transitions with confidence.',
+        featured: false,
     },
 ];
 
