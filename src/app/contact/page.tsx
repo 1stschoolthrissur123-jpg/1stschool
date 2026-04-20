@@ -32,6 +32,8 @@ const CONTACT_INFO = [
         icon: Phone, title: 'Phone', color: '#1E88E5',
         lines: ['+91 9946555972'],
         link: 'tel:+919946555972',
+        lines: ['+91 8921056026'],
+        link: 'tel:+918921056026',
     },
     {
         icon: Mail, title: 'Email', color: '#8E24AA',

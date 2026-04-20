@@ -122,6 +122,10 @@ export default function Footer() {
                                 <a href="tel:+919876543210" style={{ color: 'var(--text-muted)' }}>+91 9946555972</a>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
+                                <Phone size={15} style={{ flexShrink: 0, color: 'var(--orange)' }} />
+                                <a href="tel:+918921056026" style={{ color: 'var(--text-muted)' }}>+91 8921056026</a>
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Mail size={15} style={{ flexShrink: 0, color: 'var(--blue)' }} />
                                 <a href="mailto:info@1stschool.in" style={{ color: 'var(--text-muted)' }}>info@1stschool.in</a>
                             </div>

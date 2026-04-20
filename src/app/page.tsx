@@ -35,7 +35,7 @@ const HIGHLIGHTS = [
 ];
 
 const TESTIMONIALS = [
-  { name: 'Anitha S.', role: 'Parent of Arun (LKG)', text: 'My son has blossomed since joining 1st School. The teachers are incredibly caring and the Montessori approach really works!', rating: 5 },
+  { name: 'Riya K', role: 'Parent of Dev (LKG)', text: 'First school is the best decision we made for our son Dev. An excellent school with right curriculum and best learning experience. I want to express my sincere gratitude for Geetha mam for all the efforts you have taken during this academic year. Hats off for the entire team for giving so much love,care and knowledge to our children!', rating: 5 },
   { name: 'Rajesh K.', role: 'Parent of Meera (Nursery)', text: 'The best decision we made for our daughter. She loves going to school every day and comes home excited about what she learned.', rating: 5 },
   { name: 'Priya M.', role: 'Parent of Arjun (UKG)', text: 'Excellent infrastructure, wonderful teachers, and a curriculum that perfectly balances learning with play. Highly recommend!', rating: 5 },
 ];
