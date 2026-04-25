@@ -127,7 +127,7 @@ export default function Footer() {
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Mail size={15} style={{ flexShrink: 0, color: 'var(--blue)' }} />
-                                <a href="mailto:info@1stschool.in" style={{ color: 'var(--text-muted)' }}>info@1stschool.in</a>
+                                <a href="mailto:1stschoolthrissur@gmail.com" style={{ color: 'var(--text-muted)' }}>1stschoolthrissur@gmail.com</a>
                             </div>
                         </div>
                     </div>
@@ -145,9 +145,7 @@ export default function Footer() {
                                 <MapPin size={15} style={{ color: 'var(--orange)', flexShrink: 0 }} /> Thrissur Eastfort Branch
                             </a>
 
-                            <a href="https://share.google/faIrM1F70NOu25XAV" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)', transition: 'color 0.2s' }}>
-                                <MapPin size={15} style={{ color: 'var(--blue)', flexShrink: 0 }} /> Guruvayoor Branch
-                            </a>
+
 
                         </div>
                     </div>

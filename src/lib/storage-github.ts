@@ -149,3 +149,26 @@ export async function deleteImage(slot: string): Promise<void> {
         await writeManifestRaw({ ...data, gallery: updatedItems });
     }
 }
+
+export async function getSettings(): Promise<Record<string, string>> {
+    if (!TOKEN || !OWNER || !REPO) return {};
+    const data = await readManifestRaw();
+    if (Array.isArray(data)) return {};
+    return data.settings || {};
+}
+
+export async function updateSetting(key: string, value: string): Promise<void> {
+    if (!TOKEN || !OWNER || !REPO) {
+        throw new Error('Missing GitHub env vars. Set GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO in Netlify/Cloudflare.');
+    }
+    const data = await readManifestRaw();
+    const isArray = Array.isArray(data);
+    const settings = isArray ? {} : (data.settings || {});
+    settings[key] = value;
+    
+    if (isArray) {
+        await writeManifestRaw({ gallery: data, settings });
+    } else {
+        await writeManifestRaw({ ...data, settings });
+    }
+}

@@ -20,13 +20,12 @@ const CONTACT_INFO = [
         locations: [
             { label: 'Thrissur Westfort Branch', link: 'https://share.google/iunmcB4bkCKKWdgNc' },
             { label: 'Thrissur Eastfort Branch', link: 'https://share.google/zIZR6GaHvvmiog24B' },
-            { label: 'Guruvayoor Branch', link: 'https://share.google/faIrM1F70NOu25XAV' },
 
         ]
     },
     {
         icon: Clock, title: 'Working Hours', color: '#43A047',
-        lines: ['Mon – Fri: 8:30 AM – 3:30 PM', 'Saturday: 9:00 AM – 12:00 PM'],
+        lines: ['Mon – Fri', 'Class hours : 10:00 AM – 1:00 PM', 'Daycare hours : 1:00 PM - 6:00 PM', 'Office hours : 9:00 AM - 6:00 PM', 'Saturday: 9:00 AM – 12:00 PM : Only Daycare'],
     },
     {
         icon: Phone, title: 'Phone', color: '#1E88E5',
@@ -37,8 +36,8 @@ const CONTACT_INFO = [
     },
     {
         icon: Mail, title: 'Email', color: '#8E24AA',
-        lines: ['info@1stschool.in'],
-        link: 'mailto:info@1stschool.in',
+        lines: ['1stschoolthrissur@gmail.com'],
+        link: 'mailto:1stschoolthrissur@gmail.com',
     },
 ];
 

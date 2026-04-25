@@ -1,114 +1,127 @@
-[
-  {
-    "id": "hero-1776200470339",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/hero.jpg?t=1776200470338",
-    "slot": "hero",
-    "alt": "1st School — hero",
-    "filename": "hero.jpg",
-    "addedAt": "2026-04-14T21:01:10.339Z"
-  },
-  {
-    "id": "programs-bg-1776200514061",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/programs-bg.jpg?t=1776200514061",
-    "slot": "programs-bg",
-    "alt": "1st School — programs-bg",
-    "filename": "programs-bg.jpg",
-    "addedAt": "2026-04-14T21:01:54.061Z"
-  },
-  {
-    "id": "about-bg-1776200519357",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/about-bg.jpg?t=1776200519357",
-    "slot": "about-bg",
-    "alt": "1st School — about-bg",
-    "filename": "about-bg.jpg",
-    "addedAt": "2026-04-14T21:01:59.357Z"
-  },
-  {
-    "id": "contact-bg-1776200527350",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/contact-bg.jpg?t=1776200527350",
-    "slot": "contact-bg",
-    "alt": "1st School — contact-bg",
-    "filename": "contact-bg.jpg",
-    "addedAt": "2026-04-14T21:02:07.350Z"
-  },
-  {
-    "id": "about-1776200536859",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/about.avif?t=1776200536859",
-    "slot": "about",
-    "alt": "1st School — about",
-    "filename": "about.avif",
-    "addedAt": "2026-04-14T21:02:16.859Z"
-  },
-  {
-    "id": "gallery-1-1776200547753",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-1.jpg?t=1776200547753",
-    "slot": "gallery-1",
-    "alt": "1st School — gallery-1",
-    "filename": "gallery-1.jpg",
-    "addedAt": "2026-04-14T21:02:27.753Z"
-  },
-  {
-    "id": "gallery-2-1776200559897",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-2.jpg?t=1776200559897",
-    "slot": "gallery-2",
-    "alt": "1st School — gallery-2",
-    "filename": "gallery-2.jpg",
-    "addedAt": "2026-04-14T21:02:39.897Z"
-  },
-  {
-    "id": "gallery-3-1776200565596",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-3.jpg?t=1776200565596",
-    "slot": "gallery-3",
-    "alt": "1st School — gallery-3",
-    "filename": "gallery-3.jpg",
-    "addedAt": "2026-04-14T21:02:45.597Z"
-  },
-  {
-    "id": "gallery-4-1776200575891",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-4.jpg?t=1776200575891",
-    "slot": "gallery-4",
-    "alt": "1st School — gallery-4",
-    "filename": "gallery-4.jpg",
-    "addedAt": "2026-04-14T21:02:55.891Z"
-  },
-  {
-    "id": "gallery-7-1776200628443",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-7.jpg?t=1776200628443",
-    "slot": "gallery-7",
-    "alt": "1st School — gallery-7",
-    "filename": "gallery-7.jpg",
-    "addedAt": "2026-04-14T21:03:48.443Z"
-  },
-  {
-    "id": "gallery-8-1776200636178",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-8.jpg?t=1776200636178",
-    "slot": "gallery-8",
-    "alt": "1st School — gallery-8",
-    "filename": "gallery-8.jpg",
-    "addedAt": "2026-04-14T21:03:56.178Z"
-  },
-  {
-    "id": "gallery-6-1776200664014",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-6.jpg?t=1776200664014",
-    "slot": "gallery-6",
-    "alt": "1st School — gallery-6",
-    "filename": "gallery-6.jpg",
-    "addedAt": "2026-04-14T21:04:24.014Z"
-  },
-  {
-    "id": "gallery-5-1776201102778",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-5.jpg?t=1776201102778",
-    "slot": "gallery-5",
-    "alt": "1st School — gallery-5",
-    "filename": "gallery-5.jpg",
-    "addedAt": "2026-04-14T21:11:42.778Z"
-  },
-  {
-    "id": "gallery-1776352928592-1776352933047",
-    "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-1776352928592.jpg?t=1776352933047",
-    "slot": "gallery-1776352928592",
-    "alt": "1st School — gallery-1776352928592",
-    "filename": "gallery-1776352928592.jpg",
-    "addedAt": "2026-04-16T15:22:13.047Z"
+{
+  "gallery": [
+    {
+      "id": "hero-1776200470339",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/hero.jpg?t=1776200470338",
+      "slot": "hero",
+      "alt": "1st School — hero",
+      "filename": "hero.jpg",
+      "addedAt": "2026-04-14T21:01:10.339Z"
+    },
+    {
+      "id": "programs-bg-1776200514061",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/programs-bg.jpg?t=1776200514061",
+      "slot": "programs-bg",
+      "alt": "1st School — programs-bg",
+      "filename": "programs-bg.jpg",
+      "addedAt": "2026-04-14T21:01:54.061Z"
+    },
+    {
+      "id": "about-bg-1776200519357",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/about-bg.jpg?t=1776200519357",
+      "slot": "about-bg",
+      "alt": "1st School — about-bg",
+      "filename": "about-bg.jpg",
+      "addedAt": "2026-04-14T21:01:59.357Z"
+    },
+    {
+      "id": "contact-bg-1776200527350",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/contact-bg.jpg?t=1776200527350",
+      "slot": "contact-bg",
+      "alt": "1st School — contact-bg",
+      "filename": "contact-bg.jpg",
+      "addedAt": "2026-04-14T21:02:07.350Z"
+    },
+    {
+      "id": "about-1776200536859",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/about.avif?t=1776200536859",
+      "slot": "about",
+      "alt": "1st School — about",
+      "filename": "about.avif",
+      "addedAt": "2026-04-14T21:02:16.859Z"
+    },
+    {
+      "id": "gallery-1-1776200547753",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-1.jpg?t=1776200547753",
+      "slot": "gallery-1",
+      "alt": "1st School — gallery-1",
+      "filename": "gallery-1.jpg",
+      "addedAt": "2026-04-14T21:02:27.753Z"
+    },
+    {
+      "id": "gallery-2-1776200559897",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-2.jpg?t=1776200559897",
+      "slot": "gallery-2",
+      "alt": "1st School — gallery-2",
+      "filename": "gallery-2.jpg",
+      "addedAt": "2026-04-14T21:02:39.897Z"
+    },
+    {
+      "id": "gallery-3-1776200565596",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-3.jpg?t=1776200565596",
+      "slot": "gallery-3",
+      "alt": "1st School — gallery-3",
+      "filename": "gallery-3.jpg",
+      "addedAt": "2026-04-14T21:02:45.597Z"
+    },
+    {
+      "id": "gallery-4-1776200575891",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-4.jpg?t=1776200575891",
+      "slot": "gallery-4",
+      "alt": "1st School — gallery-4",
+      "filename": "gallery-4.jpg",
+      "addedAt": "2026-04-14T21:02:55.891Z"
+    },
+    {
+      "id": "gallery-7-1776200628443",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-7.jpg?t=1776200628443",
+      "slot": "gallery-7",
+      "alt": "1st School — gallery-7",
+      "filename": "gallery-7.jpg",
+      "addedAt": "2026-04-14T21:03:48.443Z"
+    },
+    {
+      "id": "gallery-8-1776200636178",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-8.jpg?t=1776200636178",
+      "slot": "gallery-8",
+      "alt": "1st School — gallery-8",
+      "filename": "gallery-8.jpg",
+      "addedAt": "2026-04-14T21:03:56.178Z"
+    },
+    {
+      "id": "gallery-6-1776200664014",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-6.jpg?t=1776200664014",
+      "slot": "gallery-6",
+      "alt": "1st School — gallery-6",
+      "filename": "gallery-6.jpg",
+      "addedAt": "2026-04-14T21:04:24.014Z"
+    },
+    {
+      "id": "gallery-5-1776201102778",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-5.jpg?t=1776201102778",
+      "slot": "gallery-5",
+      "alt": "1st School — gallery-5",
+      "filename": "gallery-5.jpg",
+      "addedAt": "2026-04-14T21:11:42.778Z"
+    },
+    {
+      "id": "gallery-1776352928592-1776352933047",
+      "url": "https://raw.githubusercontent.com/1stschoolthrissur123-jpg/1stschool/main/public/uploads/gallery-1776352928592.jpg?t=1776352933047",
+      "slot": "gallery-1776352928592",
+      "alt": "1st School — gallery-1776352928592",
+      "filename": "gallery-1776352928592.jpg",
+      "addedAt": "2026-04-16T15:22:13.047Z"
+    },
+    {
+      "id": "video-safeplayenvironment-1777113243524",
+      "url": "/uploads/video-safeplayenvironment.mp4?t=1777113243524",
+      "slot": "video-safeplayenvironment",
+      "alt": "1st School — video-safeplayenvironment",
+      "filename": "video-safeplayenvironment.mp4",
+      "addedAt": "2026-04-25T10:34:03.524Z"
+    }
+  ],
+  "settings": {
+    "Safe Play Environment": "/uploads/video-safeplayenvironment.mp4?t=1777113243524"
   }
-]
+}

@@ -21,6 +21,9 @@ export default function AdminPage() {
     const [uploading, setUploading] = useState<string | null>(null);
     const [deleting, setDeleting] = useState<string | null>(null);
     const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+    const [settings, setSettings] = useState<Record<string, string>>({});
+    const [savingSetting, setSavingSetting] = useState<string | null>(null);
+
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [activeSlot, setActiveSlot] = useState<string | null>(null);
     const [isAuthorized, setIsAuthorized] = useState<boolean | null>(null); // null means checking
@@ -71,11 +74,54 @@ export default function AdminPage() {
             .catch(() => setLoading(false));
     };
 
+    const fetchSettings = () => {
+        fetch('/api/settings', { cache: 'no-store' })
+            .then(r => r.ok ? r.json() : {})
+            .then(data => setSettings(data))
+            .catch(console.error);
+    };
+
     useEffect(() => {
         if (isAuthorized) {
             fetchGallery();
+            fetchSettings();
         }
     }, [isAuthorized]);
+
+    const saveSetting = async (key: string, value: string) => {
+        setSavingSetting(key);
+        try {
+            const res = await fetch('/api/settings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ key, value })
+            });
+            if (!res.ok) throw new Error(await res.text());
+            setMessage({ type: 'success', text: `Saved successfully!` });
+            fetchSettings();
+        } catch (err) {
+            setMessage({ type: 'error', text: `Save failed: ${String(err)}` });
+        } finally {
+            setSavingSetting(null);
+        }
+    };
+
+    const handleUploadVideo = async (featureName: string, file: File) => {
+        setUploading(featureName);
+        setMessage(null);
+        try {
+            const form = new FormData();
+            form.append('file', file);
+            form.append('slot', `video-${featureName.replace(/[^a-z0-9]/gi, '').toLowerCase()}`);
+            const res = await fetch('/api/upload', { method: 'POST', body: form });
+            if (!res.ok) throw new Error(await res.text());
+            const data = await res.json();
+            await saveSetting(featureName, data.url);
+        } catch (err) {
+            setMessage({ type: 'error', text: `Upload failed: ${String(err)}` });
+            setUploading(null);
+        }
+    };
 
     const handleUpload = async (slot: string, file: File) => {
         setUploading(slot);
@@ -327,6 +373,77 @@ export default function AdminPage() {
                                 );
                             })}
                         </div>
+
+                        <div style={{ marginBottom: '1.5rem', marginTop: '3.5rem' }}>
+                            <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-xl)', marginBottom: '0.25rem' }}>Program Activity Videos</h2>
+                            <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>Upload an .mp4 video or paste a YouTube/Vimeo link for each activity.</p>
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))', gap: '1rem' }}>
+                            {[
+                                'Sensory Exploration', 'Social Interaction', 'Motor Skill Development', 'Story Time & Songs', 'Safe Play Environment',
+                                'Creative Arts & Crafts', 'Pre-Reading Activities', 'Number Basics', 'Outdoor Play', 'Circle Time',
+                                'Phonics & Reading', 'Basic Mathematics', 'Science Discovery', 'Art & Music', 'Physical Education',
+                                'Advanced Literacy', 'Math Operations', 'Environmental Studies', 'Computer Awareness', 'School Readiness Program'
+                            ].map(activity => {
+                                const val = settings[activity] || '';
+                                const isSaving = savingSetting === activity || uploading === activity;
+                                return (
+                                    <div key={activity} className="bento-card" style={{ padding: '1rem', position: 'relative', overflow: 'hidden' }}>
+                                        {isSaving && (
+                                            <div style={{
+                                                position: 'absolute', inset: 0, background: 'rgba(255,255,255,0.7)', zIndex: 10,
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                            }}>
+                                                <Loader2 size={24} style={{ animation: 'spin 1s linear infinite', color: 'var(--accent)' }} />
+                                            </div>
+                                        )}
+                                        <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)', marginBottom: '0.75rem', color: 'var(--text)' }}>
+                                            {activity}
+                                        </div>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                            <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Paste YouTube or video link..."
+                                                    defaultValue={val}
+                                                    onBlur={e => {
+                                                        if (e.target.value !== val) {
+                                                            saveSetting(activity, e.target.value);
+                                                        }
+                                                    }}
+                                                    style={{
+                                                        flex: 1, padding: '0.5rem', borderRadius: 'var(--r-md)',
+                                                        background: 'var(--surface-2)', border: '1px solid var(--border)',
+                                                        color: 'var(--text)', fontSize: 'var(--text-xs)'
+                                                    }}
+                                                />
+                                            </div>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+                                                <span style={{ fontSize: '10px', color: 'var(--text-faint)', textTransform: 'uppercase', fontWeight: 700 }}>OR</span>
+                                                <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+                                            </div>
+                                            <label style={{
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.375rem',
+                                                padding: '0.5rem', borderRadius: 'var(--r-md)', background: 'var(--surface-2)',
+                                                color: 'var(--text)', fontSize: 'var(--text-xs)', fontWeight: 600, cursor: 'pointer',
+                                                border: '1px dashed var(--border)', transition: 'all 0.2s',
+                                            }}>
+                                                <Upload size={13} /> Upload .mp4 Video
+                                                <input type="file" accept="video/mp4,video/webm" hidden
+                                                    onChange={e => {
+                                                        const f = e.target.files?.[0];
+                                                        if (f) handleUploadVideo(activity, f);
+                                                        e.target.value = '';
+                                                    }}
+                                                />
+                                            </label>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
 
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', marginTop: '3.5rem', flexWrap: 'wrap', gap: '1rem' }}>
                             <div>

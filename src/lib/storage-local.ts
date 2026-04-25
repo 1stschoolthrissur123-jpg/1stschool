@@ -74,3 +74,22 @@ export async function deleteImage(slot: string): Promise<void> {
         writeManifestRaw({ ...data, gallery: updatedItems });
     }
 }
+
+export async function getSettings(): Promise<Record<string, string>> {
+    const data = readManifestRaw();
+    if (Array.isArray(data)) return {};
+    return data.settings || {};
+}
+
+export async function updateSetting(key: string, value: string): Promise<void> {
+    const data = readManifestRaw();
+    const isArray = Array.isArray(data);
+    const settings = isArray ? {} : (data.settings || {});
+    settings[key] = value;
+    
+    if (isArray) {
+        writeManifestRaw({ gallery: data, settings });
+    } else {
+        writeManifestRaw({ ...data, settings });
+    }
+}

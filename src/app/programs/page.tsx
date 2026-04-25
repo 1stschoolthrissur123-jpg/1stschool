@@ -1,8 +1,9 @@
 'use client';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
     BookOpen, Palette, Music, TreePine, Users, Clock,
-    Star, ChevronRight, Heart, Sparkles, GraduationCap, Baby
+    Star, ChevronRight, Heart, Sparkles, GraduationCap, Baby, X
 } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
@@ -71,6 +72,16 @@ const APPROACH = [
 ];
 
 export default function ProgramsPage() {
+    const [settings, setSettings] = useState<Record<string, string>>({});
+    const [selectedVideo, setSelectedVideo] = useState<{ name: string, url: string } | null>(null);
+
+    useEffect(() => {
+        fetch('/api/settings')
+            .then(res => res.ok ? res.json() : {})
+            .then(data => setSettings(data))
+            .catch(console.error);
+    }, []);
+
     return (
         <div style={{ background: 'var(--bg)', color: 'var(--text)', fontFamily: 'var(--font-body)' }}>
             <Navbar />
@@ -137,13 +148,28 @@ export default function ProgramsPage() {
 
                                         {/* Features */}
                                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                                            {p.features.map(f => (
-                                                <span key={f} style={{
-                                                    padding: '0.375rem 0.875rem', borderRadius: 'var(--r-full)',
-                                                    background: p.bg, fontSize: 'var(--text-xs)', color: p.color, fontWeight: 600,
-                                                    border: `1px solid ${p.color}22`,
-                                                }}>{f}</span>
-                                            ))}
+                                            {p.features.map(f => {
+                                                const videoUrl = settings[f];
+                                                const isClickable = !!videoUrl;
+                                                return (
+                                                    <button key={f}
+                                                        onClick={() => isClickable && setSelectedVideo({ name: f, url: videoUrl })}
+                                                        style={{
+                                                            padding: '0.375rem 0.875rem', borderRadius: 'var(--r-full)',
+                                                            background: p.bg, fontSize: 'var(--text-xs)', color: p.color, fontWeight: 600,
+                                                            border: `1px solid ${p.color}22`,
+                                                            cursor: isClickable ? 'pointer' : 'default',
+                                                            transform: 'scale(1)',
+                                                            transition: 'transform 0.2s, filter 0.2s',
+                                                            filter: isClickable ? 'brightness(1.05)' : 'none',
+                                                        }}
+                                                        onMouseOver={e => isClickable && (e.currentTarget.style.transform = 'scale(1.05)')}
+                                                        onMouseOut={e => isClickable && (e.currentTarget.style.transform = 'scale(1)')}
+                                                    >
+                                                        {f} {isClickable && '▶'}
+                                                    </button>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 </motion.div>
@@ -199,6 +225,56 @@ export default function ProgramsPage() {
                     </motion.div>
                 </div>
             </section>
+
+            {/* Video Modal */}
+            <AnimatePresence>
+                {selectedVideo && (
+                    <motion.div
+                        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                        onClick={() => setSelectedVideo(null)}
+                        style={{
+                            position: 'fixed', inset: 0, zIndex: 100,
+                            background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(4px)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            padding: '1rem'
+                        }}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
+                            onClick={e => e.stopPropagation()}
+                            style={{
+                                background: 'var(--surface)', borderRadius: 'var(--r-lg)',
+                                width: '100%', maxWidth: '800px', overflow: 'hidden',
+                                display: 'flex', flexDirection: 'column'
+                            }}
+                        >
+                            <div style={{ padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border)' }}>
+                                <h3 style={{ fontWeight: 600 }}>{selectedVideo.name}</h3>
+                                <button onClick={() => setSelectedVideo(null)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}>
+                                    <X size={20} />
+                                </button>
+                            </div>
+                            <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%', background: 'black' }}>
+                                {selectedVideo.url.includes('youtube.com') || selectedVideo.url.includes('youtu.be') ? (
+                                    <iframe
+                                        src={selectedVideo.url.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/')}
+                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    />
+                                ) : (
+                                    <video
+                                        src={selectedVideo.url}
+                                        controls
+                                        autoPlay
+                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                                    />
+                                )}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <Footer />
         </div>
