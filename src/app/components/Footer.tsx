@@ -119,7 +119,7 @@ export default function Footer() {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Phone size={15} style={{ flexShrink: 0, color: 'var(--green)' }} />
-                                <a href="tel:+919876543210" style={{ color: 'var(--text-muted)' }}>+91 9946555972</a>
+                                <a href="tel:+919946555972" style={{ color: 'var(--text-muted)' }}>+91 9946555972</a>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Phone size={15} style={{ flexShrink: 0, color: 'var(--orange)' }} />
