@@ -25,7 +25,7 @@ const CONTACT_INFO = [
     },
     {
         icon: Clock, title: 'Working Hours', color: '#43A047',
-        lines: ['Mon – Fri', 'Class hours : 10:00 AM – 1:00 PM', 'Daycare hours : 1:00 PM - 6:00 PM', 'Office hours : 9:00 AM - 6:00 PM', 'Saturday: 9:00 AM – 12:00 PM : Only Daycare'],
+        lines: ['Monday – Friday', 'Class hours : 10:00 AM – 1:00 PM', 'Daycare hours : 1:00 PM - 6:00 PM', 'Office hours : 9:00 AM - 6:00 PM', 'Saturday: 9:00 AM – 12:00 PM : Only Daycare'],
     },
     {
         icon: Phone, title: 'Phone', color: '#1E88E5',
