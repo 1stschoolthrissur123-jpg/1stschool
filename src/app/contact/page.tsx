@@ -42,7 +42,7 @@ const CONTACT_INFO = [
 ];
 
 export default function ContactPage() {
-    const [formData, setFormData] = useState({ parentName: '', childName: '', childAge: '', phone: '', program: '', message: '' });
+    const [formData, setFormData] = useState({ parentName: '', childName: '', childAge: '', phone: '', program: '', centre: '', locality: '', message: '' });
     const [formSent, setFormSent] = useState(false);
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -54,7 +54,9 @@ export default function ContactPage() {
             `👶 *Child Name:* ${formData.childName}`,
             `📅 *Child Age:* ${formData.childAge}`,
             `📞 *Phone:* ${formData.phone}`,
+            `📍 *Locality/Address:* ${formData.locality || 'Not specified'}`,
             `📚 *Program:* ${formData.program || 'Not specified'}`,
+            `🏫 *Centre of Choice:* ${formData.centre || 'Not specified'}`,
             formData.message ? `💬 *Message:* ${formData.message}` : '',
             '',
             '_Sent via 1st School website_',
@@ -66,7 +68,7 @@ export default function ContactPage() {
         setFormSent(true);
         setTimeout(() => {
             setFormSent(false);
-            setFormData({ parentName: '', childName: '', childAge: '', phone: '', program: '', message: '' });
+            setFormData({ parentName: '', childName: '', childAge: '', phone: '', program: '', centre: '', locality: '', message: '' });
         }, 4000);
     };
 
@@ -202,6 +204,18 @@ export default function ContactPage() {
                                                 <option>LKG (KG1) (4 yrs)</option>
                                                 <option>UKG (KG2) (5 yrs)</option>
                                             </select>
+                                        </div>
+                                        <div>
+                                            <label style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.375rem' }}>Centre of Choice *</label>
+                                            <select required value={formData.centre} onChange={e => setFormData(d => ({ ...d, centre: e.target.value }))} style={{ ...inputStyle, cursor: 'pointer' }}>
+                                                <option value="">Select centre...</option>
+                                                <option>Thrissur Westfort Branch</option>
+                                                <option>Thrissur Eastfort Branch</option>
+                                            </select>
+                                        </div>
+                                        <div style={{ gridColumn: '1 / -1' }}>
+                                            <label style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.375rem' }}>Locality / Address *</label>
+                                            <input required value={formData.locality} onChange={e => setFormData(d => ({ ...d, locality: e.target.value }))} style={inputStyle} placeholder="Your locality or address" />
                                         </div>
                                         <div style={{ gridColumn: '1 / -1' }}>
                                             <label style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.375rem' }}>Message</label>
