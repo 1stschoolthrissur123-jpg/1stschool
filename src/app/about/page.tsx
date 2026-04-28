@@ -29,10 +29,10 @@ const FEATURES = [
     'Air-conditioned learning spaces',
     'Dedicated play areas & gardens',
     'Montessori materials & equipment',
-    'Modern digital learning aids',
-    'Nutritious meals & snacks',
-    'Trained first-aid staff',
+    'Safe Transportation',
     'Regular parent-teacher meetings',
+    'Musical morning Assemblies',
+    'Splash pool',
 ];
 
 export default function AboutPage() {
@@ -116,7 +116,7 @@ export default function AboutPage() {
                             {/* Story text */}
                             <motion.div variants={fadeUp}>
                                 <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-muted)', lineHeight: 1.75, marginBottom: '1rem' }}>
-                                    Founded with a passion for early childhood education, <strong style={{ color: 'var(--text)' }}>1st School</strong> has been a beacon of quality preschool learning in Thrissur's Nellikunnu area. We believe that the first years of a child's life are the most crucial for building character, curiosity, and a love for learning.
+                                    Founded with a passion for early childhood education, <strong style={{ color: 'var(--text)' }}>1st School</strong> has been a beacon of quality preschool learning in Thrissur's Ayyanthole and Nellikunnu areas. We believe that the first years of a child's life are the most crucial for building character, curiosity, and a love for learning.
                                 </p>
                                 <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-muted)', lineHeight: 1.75 }}>
                                     Our team of experienced educators combines the Montessori philosophy with modern pedagogical practices to create an environment where children thrive. Every classroom is designed to spark imagination, every activity crafted to develop essential skills, and every interaction rooted in care and respect.
