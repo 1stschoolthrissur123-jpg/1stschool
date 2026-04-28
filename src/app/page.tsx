@@ -19,9 +19,7 @@ const stagger = {
 };
 
 const STATS = [
-  { num: '10+', label: 'Years of Excellence', color: '#E53935' },
-  { num: '500+', label: 'Happy Students', color: '#1E88E5' },
-  { num: '30+', label: 'Expert Teachers', color: '#43A047' },
+  { num: '15+', label: 'Years of Excellence', color: '#E53935' },
   { num: '5★', label: 'Parent Rating', color: '#FB8C00' },
 ];
 
@@ -106,13 +104,13 @@ export default function HomePage() {
 
               {/* Stats row */}
               <motion.div variants={fadeUp} style={{
-                display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem',
-                paddingTop: '1.5rem', borderTop: '1px solid var(--border)', marginTop: '0.5rem',
+                display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 'clamp(2rem, 8vw, 5rem)',
+                paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.15)', marginTop: '0.75rem',
               }}>
                 {STATS.map(s => (
-                  <div key={s.label}>
-                    <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.375rem, 2.5vw, 2rem)', color: s.color, lineHeight: 1 }}>{s.num}</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.85)', marginTop: '0.3rem', lineHeight: 1.3 }}>{s.label}</div>
+                  <div key={s.label} style={{ textAlign: 'center' }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', color: s.color, lineHeight: 1 }}>{s.num}</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.9)', marginTop: '0.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.label}</div>
                   </div>
                 ))}
               </motion.div>

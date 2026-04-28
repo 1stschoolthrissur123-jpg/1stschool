@@ -114,16 +114,16 @@ export default function Footer() {
                     {/* Contact Info */}
                     <div>
                         <h4 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                            Contact Us
+                            Enquiries
                         </h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Phone size={15} style={{ flexShrink: 0, color: 'var(--green)' }} />
-                                <a href="tel:+919946555972" style={{ color: 'var(--text-muted)' }}>+91 9946555972</a>
+                                <a href="tel:+919946555972" style={{ color: 'var(--text-muted)' }}>West Fort - 9946555972</a>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Phone size={15} style={{ flexShrink: 0, color: 'var(--orange)' }} />
-                                <a href="tel:+918921056026" style={{ color: 'var(--text-muted)' }}>+91 8921056026</a>
+                                <a href="tel:+918921056026" style={{ color: 'var(--text-muted)' }}>East Fort - 8921056026</a>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                                 <Mail size={15} style={{ flexShrink: 0, color: 'var(--blue)' }} />

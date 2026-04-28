@@ -12,7 +12,7 @@ const fadeUp = {
 };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 
-const SCHOOL_WHATSAPP = '+919946555972';
+
 
 const CONTACT_INFO = [
     {
@@ -25,13 +25,13 @@ const CONTACT_INFO = [
     },
     {
         icon: Clock, title: 'Working Hours', color: '#43A047',
-        lines: ['Monday – Friday', 'Class hours : 10:00 AM – 1:00 PM', 'Daycare hours : 1:00 PM - 6:00 PM', 'Office hours : 9:00 AM - 6:00 PM', 'Saturday: 9:00 AM – 12:00 PM : Only Daycare'],
+        lines: ['Monday – Friday', 'Class hours : 09:30 AM – 1:30 PM', 'Daycare hours : 1:30 PM - 6:00 PM', 'Office hours : 9:00 AM - 6:00 PM'],
     },
     {
-        icon: Phone, title: 'Phone', color: '#1E88E5',
+        icon: Phone, title: 'Enquiries', color: '#1E88E5',
         locations: [
-            { label: '+91 9946555972', link: 'tel:+919946555972' },
-            { label: '+91 8921056026', link: 'tel:+918921056026' }
+            { label: 'West Fort - 9946555972', link: 'tel:+919946555972' },
+            { label: 'East Fort - 8921056026', link: 'tel:+918921056026' }
         ]
     },
     {
@@ -47,6 +47,10 @@ export default function ContactPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Determine target WhatsApp number based on selected centre
+        const targetNumber = formData.centre.includes('Eastfort') ? '918921056026' : '919946555972';
+
         const lines = [
             '🏫 *New Admission Inquiry — 1st School*',
             '',
@@ -62,7 +66,7 @@ export default function ContactPage() {
             '_Sent via 1st School website_',
         ].filter(Boolean).join('\n');
 
-        const url = `https://wa.me/${SCHOOL_WHATSAPP}?text=${encodeURIComponent(lines)}`;
+        const url = `https://wa.me/${targetNumber}?text=${encodeURIComponent(lines)}`;
         window.open(url, '_blank', 'noopener,noreferrer');
 
         setFormSent(true);
