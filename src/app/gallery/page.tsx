@@ -49,9 +49,7 @@ export default function GalleryPage() {
                             <motion.h1 variants={fadeUp} style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-2xl)', color: 'var(--text)' }}>Photo Gallery</motion.h1>
                         </div>
                         <motion.div variants={fadeUp}>
-                            <Link href="/admin" style={{ fontSize: 'var(--text-sm)', color: 'var(--accent)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                                Manage Photos <ChevronRight size={14} />
-                            </Link>
+
                         </motion.div>
                     </motion.div>
                 </div>

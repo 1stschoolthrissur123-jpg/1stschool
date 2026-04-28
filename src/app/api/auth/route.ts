@@ -6,13 +6,7 @@ export const runtime = 'edge';
 export async function POST(req: NextRequest) {
     try {
         const { password } = await req.json();
-        const adminPass = process.env.ADMIN_PASSWORD;
-
-        if (!adminPass) {
-            // If no password is set, allow access but log a warning (or deny in production)
-            console.warn('ADMIN_PASSWORD not set in environment variables.');
-            return NextResponse.json({ success: true, message: 'No password protection configured.' });
-        }
+        const adminPass = '1stschool@2026';
 
         if (password === adminPass) {
             return NextResponse.json({ success: true });
