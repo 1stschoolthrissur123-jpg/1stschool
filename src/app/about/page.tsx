@@ -31,7 +31,7 @@ const FEATURES = [
     'Montessori materials & equipment',
     'Safe Transportation',
     'Regular parent-teacher meetings',
-    'Musical morning Assemblies',
+    'Musical-morning assemblies',
     'Splash pool',
 ];
 

@@ -158,6 +158,39 @@ export default function AdminPage() {
         }
     };
 
+    const handleDeleteVideo = async (activity: string) => {
+        if (!confirm(`Delete media for "${activity}"?`)) return;
+        setSavingSetting(activity);
+        setMessage(null);
+        try {
+            const slot = `video-${activity.replace(/[^a-z0-9]/gi, '').toLowerCase()}`;
+            
+            // 1. Delete from storage (GitHub/Local)
+            // We ignore errors here in case it was just a manual YouTube link not in storage
+            await fetch('/api/delete', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ slot })
+            });
+            
+            // 2. Clear from settings
+            const setRes = await fetch('/api/settings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ key: activity, value: '' })
+            });
+            if (!setRes.ok) throw new Error(await setRes.text());
+            
+            setMessage({ type: 'success', text: `Media removed for ${activity}` });
+            fetchSettings();
+            fetchGallery();
+        } catch (err) {
+            setMessage({ type: 'error', text: `Failed to remove media: ${String(err)}` });
+        } finally {
+            setSavingSetting(null);
+        }
+    };
+
     const logoColors = ['#E53935', '#1E88E5', '#43A047', '#FDD835', '#8E24AA', '#FB8C00'];
 
     if (isAuthorized === null) return null;
@@ -397,8 +430,19 @@ export default function AdminPage() {
                                                 <Loader2 size={24} style={{ animation: 'spin 1s linear infinite', color: 'var(--accent)' }} />
                                             </div>
                                         )}
-                                        <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)', marginBottom: '0.75rem', color: 'var(--text)' }}>
-                                            {activity}
+                                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                                            <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text)' }}>
+                                                {activity}
+                                            </div>
+                                            {val && (
+                                                <button 
+                                                    onClick={() => handleDeleteVideo(activity)}
+                                                    style={{ color: '#E53935', cursor: 'pointer', background: 'none', border: 'none', padding: '0.25rem', display: 'flex', alignItems: 'center', transition: 'opacity 0.2s' }}
+                                                    title="Delete Media"
+                                                >
+                                                    <Trash2 size={14} />
+                                                </button>
+                                            )}
                                         </div>
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                             <div style={{ display: 'flex', gap: '0.5rem' }}>

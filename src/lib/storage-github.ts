@@ -114,6 +114,24 @@ export async function uploadImage(slot: string, buffer: Buffer, ext: string, alt
 
     const data = await readManifestRaw();
     const items = getArray(data);
+
+    // Clean up old file if filename/extension changed for the same slot
+    const existing = items.find(m => m.slot === slot);
+    if (existing && existing.filename !== filename) {
+        try {
+            const oldPath = `${BASE}/${existing.filename}`;
+            const oldSha = await getSHA(oldPath);
+            if (oldSha) {
+                await ghFetch(oldPath, {
+                    method: 'DELETE',
+                    body: JSON.stringify({ message: `chore: cleanup old file for slot '${slot}'`, sha: oldSha, branch: BRANCH }),
+                });
+            }
+        } catch (e) {
+            console.warn(`Failed to cleanup old file for slot ${slot}:`, e);
+        }
+    }
+
     const updatedItems = [...items.filter(m => m.slot !== slot), item];
 
     if (Array.isArray(data)) {
