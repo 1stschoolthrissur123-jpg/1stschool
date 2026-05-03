@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageBackground from '../components/PageBackground';
+import ThinkTankers from '../components/ThinkTankers';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 28 },
@@ -126,6 +127,9 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            {/* ThinkTankers */}
+            <ThinkTankers />
 
             {/* Values */}
             <section className="section" style={{ background: 'var(--surface)' }}>
